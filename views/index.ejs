@@ -1,0 +1,73 @@
+ejs
+<!-- views/index.ejs -->
+<% var title = 'SolesFit - Inicio'; %> <!-- Definición de la variable title -->
+<% include ../includes/header.ejs %> <!-- Inclusión del encabezado -->
+
+<div id="container">
+    <div class="top-search clearfix">
+        <h3 class="head-pet"><span>Búsqueda de recetas</span></h3>
+        <form action="#" id="searchform" method="post">
+            <p>
+                <input type="text" name="s" id="s" class="field" value="Search for" />
+                <input type="submit" name="s_submit" id="s-submit" value="" />
+            </p>
+        </form>
+        <p class="statement"><span class="fireRed">Búsquedas populares :</span> <a href="#">meatloaf recipes</a>, <a href="#">banana cake recipes</a>, <a href="#">cheesecake recipes</a>, <a href="#">carbonara recipes</a></p>
+    </div>
+    <div id="content">
+        <div id="slider" class="slider2">
+            <div class="most-rated">
+                <div class="item">
+                    <a href="#" class="img-box"><img src="/images/slider/53x63.jpg" alt="Hotest" /></a>
+                    <h5><a href="#">Las mejores recetas de sándwiches del mundo aquí</a></h5>
+                    <p>Para cada buen vino, existe el vino perfecto.</p>
+                    <p class="rate">
+                        <span class="on"></span>
+                        <span class="on"></span>
+                        <span class="on"></span>
+                        <span class="off"></span>
+                        <span class="off"></span>
+                    </p>
+                </div>
+            </div>
+            <h2 class="slider-head"><img src="/images/slider-heading.png" alt="Top3 Recipes of the Day" /></h2>
+            <p class="slogan">Si la comida es una experiencia para ti, entonces la encontrarás en SolFit</p>
+            <div class="slides right-slider">
+                <ul>
+                    <li>
+                        <a href="#" class="img-box"><img src="/images/slider/515x265.jpg" alt="Hotest" /></a>
+                        <div class="slide-info">
+                            <h2><a href="#">¿Crees que conoces el verdadero shawarma?</a></h2>
+                            <div class="rating">
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="on"></span>
+                                <span class="off"></span>
+                                <span>Calificación promedio de los miembros: <span>4.0 / 5</span></span>
+                            </div>
+                            <p>Para cada buen vino, existe el maridaje perfecto de aceitunas y queso. Descubra un montón de excelentes consejos y maridajes en nuestro centro de ideas.</p>
+                            <a href="#" class="readmore">Leer más</a>
+                        </div>
+                    </li>
+                    <!-- Agrega más elementos según sea necesario -->
+                </ul>
+                <p class="sliderNav"><span></span></p>
+            </div>
+        </div>
+        <div id="whats-hot">
+            <h2 class="w-bot-border">Qué <span>Caliente</span></h2>
+            <ul class="cat-list clearfix">
+                <li>
+                    <h3><a href="#">Especial indio</a></h3>
+                    <a href="#" class="img-box"><img src="/images/hot-recipes/222x144.jpg" alt="Recipe Collections" /></a>
+                    <h4><a href="#">Aquí va un texto de encabezado //</a></h4>
+                    <p>Para cada buen vino, existe el maridaje perfecto de aceitunas y queso. Descubra un montón de excelentes consejos y combinaciones en nuestro centro de ideas<a href="#">...más</a></p>
+                </li>
+                <!-- Agrega más elementos según sea necesario -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<% include ../includes/footer.ejs %>
