@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Recetas | SolFit</title>
+    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="fondo">
+
+<div id="header-wrapper">
+    <div id="header">
+        <a href="index.html"><img src="images/logo.png" alt="SolFit" class="logo" /></a>
+    </div>
+
+    <div id="nav-wrap">
+        <div class="inn-nav clearfix">
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="recetas.html">Recetas</a></li>
+                <li><a href="crear_receta.html">Crear Receta</a></li>
+                <li><a href="editar_receta.html">Editar Receta</a></li>
+                <li><a href="services.html">Contáctanos</a></li>
+            </ul>
+            <ul class="social-nav">
+                <li class="twitter"><a href="#"></a></li>
+                <li class="facebook"><a href="#"></a></li>
+                <li class="flickr"><a href="#"></a></li>
+                <li class="rss"><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <span class="w-pet-border"></span>
+</div>
+
+<div id="container">
+    <div class="top-search clearfix">
+        <h3 class="head-pet"><span>Búsqueda de recetas</span></h3>
+        <form action="#" id="searchform" method="post">
+            <p>
+                <input type="text" name="2" id="s" class="field" value="Buscar" />
+                <input type="submit" name="s_submit" id="s-submit" value="" />
+            </p>
+        </form>
+        <p class="statement"><span class="fireRed">Búsquedas populares :</span> <a href="#">Café para adelgazar</a></p>
+    </div>
+<br>
+<br>
+    <h2 class="textlistarecetas">Lista de Recetas</h2>
+    <br>
+    <br>
+    <ul id="recetaList"></ul>
+    <button onclick="location.href='crear_receta.html'">Crear Nueva Receta</button>
+</div>
+<br>
+<br>
+<div id="bottom-wrap">
+    <ul id="bottom" class="clearfix">
+        <li>
+            <div class="about">
+                <a href="index.html"><img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo" /></a>
+                <p>SolFit es un espacio dedicado a la salud y el bienestar, donde encontrarás recetas saludables, consejos de alimentación y estilo de vida.</p>
+                <a href="#" class="readmore">Leer más sobre nosotros</a>
+            </div>
+        </li>
+        <li>
+            <h2>Recetas <span>Reciente</span></h2>
+            <ul class="recent-posts">
+                <li>
+                    <a href="#" class="img-box"><img src="images/img8.jpg" alt="Image" /></a>
+                    <h5><a href="#">Wraps de Pavo y Vegetales</a></h5>
+                    <p>Deliciosos wraps de pavo con una mezcla de vegetales frescos, perfectos para un almuerzo ligero y nutritivo.</p>
+                </li>
+                <li>
+                    <a href="#" class="img-box"><img src="images/img9.jpg" alt="Image" /></a>
+                    <h5><a href="#">Guiso de Lentejas y Verduras</a></h5>
+                    <p>Un guiso reconfortante de lentejas y verduras, ideal para una comida nutritiva y llena de sabor.</p>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>Twitter <span>Actualizaciones</span></h2>
+            <div id="twitter_update_list" class="twitter"></div>
+        </li>
+    </ul>
+</div>
+
+<div id="footer-wrap">
+    <div id="footer">
+        <p class="copyright">Copyright © 2024, SolFit. Todos los derechos reservados.</p>
+        <p class="dnd">Desarrollado por <a href="#">Jhon Stiven, Sol Mary, Luis</a></p>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+    $(document).ready(function() {
+        // Función para cargar recetas desde la API
+        $.get('/api/recetas', function(recetas) {
+            recetas.forEach(function(receta) {
+                $('#recetaList').append(`
+                    <li>
+                        <h3>${receta.nombre}</h3>
+                        <p>${receta.descripcion}</p>
+                        <button onclick="editarReceta('${receta.nombre}')">Editar</button>
+                        <button onclick="eliminarReceta('${receta.nombre}')">Eliminar</button>
+                    </li>
+                `);
+            });
+        });
+
+        // Función para redirigir a la página de editar receta
+        window.editarReceta = function(nombre) {
+            location.href = `editar_receta.html?nombre=${nombre}`;
+        };
+
+        // Función para eliminar receta
+        window.eliminarReceta = function(nombre) {
+            if (confirm(`¿Estás seguro de que deseas eliminar la receta "${nombre}"?`)) {
+                $.ajax({
+                    url: `/api/recetas/${nombre}`,
+                    type: 'DELETE',
+                    success: function() {
+                        alert('Receta eliminada exitosamente.');
+                        // Recargar la lista de recetas después de eliminar
+                        $('#recetaList').empty(); // Limpiar la lista actual
+                        $.get('/api/recetas', function(recetas) {
+                            recetas.forEach(function(receta) {
+                                $('#recetaList').append(`
+                                    <li>
+                                        <h3>${receta.nombre}</h3>
+                                        <p>${receta.descripcion}</p>
+                                        <button onclick="editarReceta('${receta.nombre}')">Editar</button>
+                                        <button onclick="eliminarReceta('${receta.nombre}')">Eliminar</button>
+                                    </li>
+                                `);
+                            });
+                        });
+                    },
+                    error: function() {
+                        alert('Error al eliminar la receta.');
+                    }
+                });
+            }
+        };
+    });
+</script>
+</body>
+</html>

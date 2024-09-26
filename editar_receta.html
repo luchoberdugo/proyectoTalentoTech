@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<!-- Fuerce siempre el motor de renderizado más reciente de IE (incluso en la intranet) y Chrome Frame. Hay que Eliminar esta opción si utilizamos .htaccess -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+	<title>Editar Receta | SolFit</title>
+	
+	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+	<link rel="stylesheet" href="js/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" media="all" type="text/css" href="js/prettyPhoto/css/prettyPhoto.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Generate Favicon Using 1.http://tools.dynamicdrive.com/favicon/ OR 2.http://www.favicon.cc/ -->
+	<link rel="shortcut icon" href="favicon.png" />
+		
+</head>
+<body class="fondo"> <!--<![endif]-->
+
+
+<!-- ============= EL ENCABEZADO COMIENZA AQUÍ ============== -->
+		<div id="header-wrapper">
+				
+		        <div id="header">
+					<!-- LOGOTIPO DE LA WEB -->
+		            <a href="index.html"><img src="images/logo.png" alt="SolFit" class="logo" /></a>
+		            
+				</div><!-- Fin del encabezado div -->
+				
+                <!--LA BARRA DE NAVEGACIÓN COMIENZA AQUÍ-->
+		        <div id="nav-wrap">
+						<div class="inn-nav clearfix">
+		                		
+		                        <!-- LA NAVEGACIÓN PRINCIPAL COMIENZA AQUÍ -->
+								<ul class="nav">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>
+                                        <a href="recetas.html">Recetas</a>
+                                    </li>
+                                    <li><a href="crear_receta.html">Crear Receta</a></li>
+                                    <li class="active">
+                                            <a href="editar_receta.html">Editar Receta</a>
+                                    </li>
+                                    <li><a href="services.html">Contáctanos</a></li>
+								</ul><!-- Fin de nav ul -->
+								<!-- LA NAVEGACIÓN PRINCIPAL TERMINA AQUÍ -->
+		                        
+		                        <!-- NAVEGACIÓN SOCIAL -->
+								<ul class="social-nav">
+		                                <li class="twitter"><a href="#"></a></li>
+		                                <li class="facebook"><a href="#"></a></li>
+		                                <li class="flickr"><a href="#"></a></li>
+		                                <li class="rss"><a href="#"></a></li>
+								</ul><!-- Fin de la navegación social -->
+						</div>
+				</div>
+				<!-- fin del mensaje de navegación -->
+				<!-- LA BARRA DE NAVEGACIÓN TERMINA AQUÍ -->
+		
+				<span class="w-pet-border"></span>
+		
+		</div><!-- fin del div contenedor del encabezado -->
+
+        <!-- ============== EL CONTENEDOR COMIENZA AQUÍ ============== -->
+
+<div id="container">
+
+    <!-- LA BÚSQUEDA DEL SITIO WEB COMIENZA AQUÍ -->    	
+    <div class="top-search clearfix">
+            <h3 class="head-pet"><span>Búsqueda de recetas</span></h3>
+            <form action="#" id="searchform" method="post">
+                    <p>
+                            <input type="text" name="2" id="s" class="field" value="Buscar" />
+                            <input type="submit" name="s_submit" id="s-submit" value="" />
+                    </p>
+            </form>
+            <p class="statement"><span class="fireRed">Búsquedas populares :</span> <a href="#">Café para adelgazar</a></p>
+    </div><!-- fin del div de búsqueda superior--> 
+
+
+<!-- Contenido Principal -->
+<br>
+<br>
+    <h2 class="texteditarreceta">Editar Receta</h2>
+    <br>
+    <br>
+    <form id="editarRecetaForm">
+        <input type="text" id="nombre" name="nombre" required placeholder="Nombre de la receta" readonly>
+        <input type="text" id="imagen" name="imagen" required placeholder="URL de la imagen">
+        <textarea id="descripcion" name="descripcion" required placeholder="Descripción"></textarea>
+        <textarea id="ingredientes" name="ingredientes" required placeholder="Ingredientes"></textarea>
+        <textarea id="pasos" name="pasos" required placeholder="Pasos a seguir"></textarea>
+        <button type="submit">Actualizar Receta</button>
+    </form>
+    
+</div>
+<br>
+<!-- ============= EL ÁREA INFERIOR COMIENZA AQUÍ ============== -->
+<div id="bottom-wrap">
+    <ul id="bottom" class="clearfix">
+            <li>
+                    <div class="about">
+                            <a href="index.html"><img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo" /></a>
+                            <p>SolFit es un espacio dedicado a la salud y el bienestar, donde encontrarás recetas saludables, consejos de alimentación y estilo de vida.</p>
+                            <a href="#" class="readmore">Leer más sobre nosotros</a>
+                    </div>
+            </li>
+            <li>
+                    <h2>Recetas <span>Reciente</span></h2>
+                    <ul class="recent-posts">
+                            <li>
+                                    <a href="#" class="img-box"><img src="images/img8.jpg" alt="Image" /></a>
+                                    <h5><a href="#">Wraps de Pavo y Vegetales</a></h5>
+                                    <p>Deliciosos wraps de pavo con una mezcla de vegetales frescos, perfectos para un almuerzo ligero y nutritivo.</p>
+                            </li>
+                            
+                            <li>
+                                    <a href="#" class="img-box"><img src="images/img9.jpg" alt="Image" /></a>
+                                    <h5><a href="#">Guiso de Lentejas y Verduras</a></h5>
+                                    <p>Un guiso reconfortante de lentejas y verduras, ideal para una comida nutritiva y llena de sabor.</p>
+                            </li>
+                    </ul>
+            </li>
+            
+            <li>
+                    <h2>Twitter <span>Actualizaciones</span></h2>
+                <div id="twitter_update_list" class="twitter">
+                </div>
+            </li>
+            
+    </ul><!-- fin del div inferior -->
+</div><!-- fin del div envolvente inferior -->
+<!-- ============= EL ÁREA INFERIOR TERMINA AQUÍ ============== -->
+
+
+<!-- ============== EL PIE DE PÁGINA COMIENZA AQUÍ =============== -->	
+
+<div id="footer-wrap">
+    <div id="footer">
+            <p class="copyright">Copyright © 2024, SolFit. Todos los derechos reservados.</p>
+            <p class="dnd">Desarrollado por <a href="#">Jhon Stiven, Sol Mary, Luis</a></p>
+    </div><!-- fin del pie de página div -->
+</div><!-- fin del div del pie de página -->
+<!-- ============== EL PIE DE PÁGINA COMIENZA AQUÍ =============== -->
+
+<script src="js/script.js"></script>
+<script>
+    $(document).ready(function() {
+    // Obtener el nombre de la receta de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombreReceta = urlParams.get('nombre');
+
+    // Cargar los detalles de la receta desde la API
+    $.get(`/api/recetas/${nombreReceta}`)
+        .done(function(receta) {
+            // Llenar el formulario con los datos de la receta
+            $('#nombre').val(receta.nombre);
+            $('#imagen').val(receta.imagen);
+            $('#descripcion').val(receta.descripcion);
+            $('#ingredientes').val(receta.ingredientes);
+            $('#pasos').val(receta.pasos);
+        })
+        .fail(function() {
+            alert('Error al cargar la receta. Asegúrate de que el nombre es correcto o que la receta existe.');
+        });
+
+    // Manejar el envío del formulario
+    $('#editarRecetaForm').on('submit', function(event) {
+        event.preventDefault(); // Evitar el comportamiento por defecto del formulario
+
+        // Obtener los datos del formulario
+        const datosReceta = {
+            imagen: $('#imagen').val(),
+            descripcion: $('#descripcion').val(),
+            ingredientes: $('#ingredientes').val(),
+            pasos: $('#pasos').val()
+        };
+
+        // Hacer la solicitud para actualizar la receta
+        $.ajax({
+            url: `/api/recetas/${nombreReceta}`,
+            type: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify(datosReceta),
+            success: function() {
+                alert('Receta actualizada exitosamente.');
+                window.location.href = 'recetas.html'; // Redirigir a la lista de recetas
+            },
+            error: function() {
+                alert('Error al actualizar la receta.');
+            }
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>
